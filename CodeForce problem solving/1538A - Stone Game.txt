@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+    int t,n,a[100],min,max;
+    cin>>t;
+    int s[t];
+    
+    for(int i=0;i<t;i++)
+    {
+        cin>>n;
+        min=0;
+        max=0;
+        for(int j=0;j<n;j++)
+        {
+            cin>>a[j];
+            if(a[j]>a[max]) max=j;
+            else if(a[j]<a[min]) min=j;
+        }
+        
+        if(max>min) {
+            if((n-max)+min+1>=(n-max)+(max-min) && max+1>=(n-max)+(max-min)) {
+               // cout<<"1"<<endl;
+                s[i]=(n-max)+(max-min);
+            }
+            else if ((n-max)+min+1>=max+1 && (n-max)+(max-min)>=max+1) 
+            {
+                //cout<<"2"<<endl;
+                s[i]=max+1;
+            }
+            else 
+            {
+               // cout<<"3"<<endl;
+                s[i]=(n-max)+min+1;
+            }
+        }
+        else if(min>max){
+            if((n-min)+max+1>=(n-min)+(min-max) && min+1>=(n-min)+(min-max)) s[i]=(n-min)+(min-max);
+            else if ((n-min)+max+1>=min+1 && (n-min)+(min-max)>=min+1) s[i]=min+1;
+            else s[i]=(n-min)+max+1;
+        }
+        else if(n-max>=max+1) s[i]=max+1;
+        else s[i]=n-max;
+    }
+    for(int i=0;i<t;i++) cout<<s[i]<<endl;
+
+}

@@ -1,0 +1,72 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,count=1,sum=0,check=2;
+    cin>>n;
+    
+    int arr[n+1],max;
+    //cin>>arr[1];
+    //int max[1]=arr[1];
+    
+    if(n>=1)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            cin>>arr[i];
+            
+           /* if(max<arr[i])
+            {
+                if(sum==0) sum+=arr[1];
+                else 
+                {
+                    for(int j=2;j)
+                    max[1]=arr[i];
+                }
+            }
+            else {
+                sum+=arr[i];
+            }*/
+            
+        }
+        int temp;
+        for(int i=1;i<n;i++)
+        {
+            for(int j=i+1;j<=n;j++)
+            {
+                if(arr[i]<arr[j])
+                {
+                    temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+        
+        for(int i=2;i<=n;i++)
+        {
+            sum+=arr[i];
+        }
+        //cout<<arr[1]<<"-arr[1]"<<endl;
+        max=arr[1];
+        if(max>sum) 
+        {
+            //cout<<max<<"-max "<<sum<<"-sum "<<endl;
+            cout<<count;
+        }
+        else{
+            while(max<=sum)
+            {
+                max+=arr[check++];
+                sum-=arr[check];
+                count++;
+            }
+            cout<<count;
+        }
+        
+    }
+}

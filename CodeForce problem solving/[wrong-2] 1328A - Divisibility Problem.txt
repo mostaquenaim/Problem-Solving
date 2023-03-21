@@ -1,0 +1,40 @@
+
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int t,count=0;
+    cin>>t;
+    int a[t+1],b[t+1];
+    
+    for(int i=1;i<=t;i++)
+    {
+        cin>>a[i]>>b[i];
+    }
+    
+    
+    if(t>=1){
+    for(int i=1;i<=t;i++)
+    {
+        if(a[i]>=1 && b[i]>=1 )
+    {
+        if(a[i]%b[i]==0) {
+            //cout<<a[i]<<" "<<b[i]<<endl;
+            cout<<"0";
+        }
+        else {
+            do{
+                a[i]++;
+                count++;
+            }while(a[i]%b[i]!=0);
+            cout<<count<<endl; count=0;
+        }
+    }
+    }
+    }
+    
+    
+}

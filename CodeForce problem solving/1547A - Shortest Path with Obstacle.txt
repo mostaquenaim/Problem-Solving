@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main()
+ 
+{
+    int t,xa,ya,xb,yb,xf,yf,s;
+    cin>>t;
+ 
+    for(int i=0;i<t;i++)
+    {
+        cin>>xa>>ya>>xb>>yb>>xf>>yf;
+ 
+        s=abs(xa-xb) + abs(ya-yb);
+ 
+        if((xa==xb && xb==xf && ((ya<yf && yf<yb) || (yb<yf && yf<ya))) || (ya==yb && yb==yf && ((xa<xf && xf<xb) || (xb<xf && xf<xa)))) s+=2;
+ 
+        cout<<s<<endl;
+    }
+}

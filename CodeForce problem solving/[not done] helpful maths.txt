@@ -1,0 +1,55 @@
+
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+   string str;
+   cin>>str;
+   char temp;
+   for(int i=0;i<str.length();i++)
+   {
+       if(str[i]=='3')
+       {
+       for(int j=str.length()-(i+1);j>=i;j--)
+       {
+                   if(str[j]=='1')
+                  {
+                      temp=str[i];
+                      str[i]=str[j];
+                      str[j]=temp;
+                      break;
+                  }
+                  else if(str[j]=='2')
+                  {
+                       temp=str[i];
+                      str[i]=str[j];
+                      str[j]=temp;
+                      break;
+                  }
+
+       }
+       }
+       else if(str[i]=='2')
+       {
+           for(int j=str.length()-(i+1);j>=i;j++)
+       {
+                   if(str[j]=='1')
+                  {
+                      temp=str[i];
+                      str[i]=str[j];
+                      str[j]=temp;
+                      break;
+                  }
+
+       }
+       }
+       
+       
+   }
+   
+   for(int i=0;i<str.length();i++)
+   cout<<str[i];
+}

@@ -1,0 +1,23 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,count=0;
+    string s;
+    cin>>n;
+    cin>>s;
+    if(s.length()==n)
+    {
+        for(int i=0;i<n-1;i++)
+        {
+            if(s[i]=='R' && s[i+1]=='R')  count++;
+            else if(s[i]=='B' && s[i+1]=='B' ) count++;
+            else if(s[i]=='G' && s[i+1]=='G')  count++;
+        }
+    }
+    cout<<count;
+}

@@ -1,0 +1,32 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string s,s2;
+    int count=0,check=0;
+    cin>>s;
+    
+    bool flag=true;
+    
+    for(int i=0;i<s.length();i++)
+    {
+        if(s[i]=='W' && s[i+1]=='U' && s[i+2]=='B') {
+            check++;
+            i+=2;
+            if(count!=0)
+            if(check==1) cout<<" ";
+            continue;
+        }
+        else if(s[i]>=65 && s[i]<=90) {
+            check=0;
+            count=1;
+            cout<<s[i];
+        }
+    }
+    
+    
+}

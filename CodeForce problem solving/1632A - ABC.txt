@@ -1,0 +1,25 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,n,zero,one;
+    cin>>t;
+    char s[100];
+    string s2[t];
+    
+    for(int i=0;i<t;i++)
+    {
+        
+        cin>>n;
+        
+        for(int j=0;j<n;j++) cin>>s[j];
+        
+        if(n==1 || (n==2 && s[0]!=s[1]) ) s2[i]="YES";
+        else s2[i]="NO";
+    }
+    for(int i=0;i<t;i++) cout<<s2[i]<<endl;
+}

@@ -1,0 +1,51 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int s,n;
+    cin>>s>>n;
+    bool flag=true;
+    int x[n],y[n],temp;
+
+    for(int i=0;i<n;i++)
+    {
+        cin>>x[i]>>y[i];
+    }
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            if(x[i]>x[j])
+            {
+                temp=x[i];
+                x[i]=x[j];
+                x[j]=temp;
+
+                temp=y[i];
+                y[i]=y[j];
+                y[j]=temp;
+            }
+        }
+    }
+
+    if(s<=x[0]) flag=false;
+
+    else{
+    s+=y[0];
+    for(int i=1;i<n;i++)
+    {
+        if(s<=x[i])
+        {
+            flag=false;
+            break;
+        }
+        s+=y[i];
+    }
+    }
+    if(flag) cout<<"YES";
+    else cout<<"NO";
+}

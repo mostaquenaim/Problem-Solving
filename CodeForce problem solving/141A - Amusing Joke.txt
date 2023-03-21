@@ -1,0 +1,64 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string g,h,d;
+    cin>>g>>h>>d;
+    char temp;
+    int count=0;
+    
+    if(g.length()+h.length()==d.length())
+    {
+        for(int j=0;j<g.length();j++)
+        {
+            for(int i=count;i<d.length();i++)
+            { 
+                if(d[i]==g[j]){
+                    //cout<<"d "<<d[i]<<endl;
+                    temp=d[i];
+                    d[i]=d[count];
+                    d[count]=temp;
+                    d[j]='0';
+                    count++;
+                    break;
+                }
+            }
+        }
+        
+        for(int k=0;k<h.length();k++)
+        {
+            for(int i=count;i<d.length();i++)
+            { 
+                if(d[i]==h[k]){
+                                     //   cout<<count <<" count d "<<d[i]<<endl;
+
+                    //if(i!=k)
+                    //{
+                    temp=d[i];
+                    d[i]=d[count];
+                    d[count]=temp;
+                    //}
+                    d[count]='0';
+                    count++;
+                    break;
+                }
+            }
+        }
+        bool flag=true;
+        for(int i=0;i<d.length();i++)
+        {
+            if(d[i]!='0'){
+                flag=false;
+                break;
+            }
+        }
+        if(flag) cout<<"YES";
+        else cout<<"NO";
+}
+else cout<<"NO";
+    
+}

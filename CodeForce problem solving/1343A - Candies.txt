@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t,n,n2,x,y,count;
+    cin>>t;
+
+    while(t--){
+        cin>>n;
+        count=1;
+        n2=n;
+
+        while(true){
+            y=log2(n2+1);
+            //cout<<y<<endl;
+
+            if(pow(2,y)==n2+1){
+                x=count;
+                break;
+            }
+
+            else {
+                    count++;
+                    while(n%count!=0) count++;
+                    n2=n/count;
+            }
+        }
+        cout<<x<<endl;
+
+    }
+}

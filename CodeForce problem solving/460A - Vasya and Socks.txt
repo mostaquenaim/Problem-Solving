@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+//unsigned
+int main(){
+    int n,m,count=0;
+    cin>>n>>m;
+
+    for(int i=1;i<=n;i++){
+        count++;
+        if(i%m==0) n++;
+    }
+    cout<<count;
+}

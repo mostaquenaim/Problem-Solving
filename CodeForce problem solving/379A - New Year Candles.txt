@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int log_a_to_base_b(int a, int b)
+{
+    return log(a) / log(b);
+}
+
+int main(){
+   int n,n2,m,x,count=0;
+   cin>>n>>m;
+    n2=n;
+    count+=n+n/m;
+   x=n/m+(n-m*(n/m));
+   while(x>=m){
+        count+=x/m;
+        x=x/m+(x-m*(x/m));
+   }
+   cout<<count;
+}

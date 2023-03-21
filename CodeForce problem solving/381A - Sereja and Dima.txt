@@ -1,0 +1,54 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,max,s=0,d=0;
+    cin>>n;
+    int x[n];
+    
+    for(int i=0;i<n;i++)
+    {
+        cin>>x[i];
+    }
+    int front=0,back=n-1;
+    while(true)
+    {
+        if(front<=back)
+        {
+        if(x[front]>x[back]) {
+            s+=x[front]; front++;
+            if(front<=back)
+        {
+            if(x[front]>x[back])
+            {
+                d+=x[front]; front++;
+            }
+            else{
+                d+=x[back]; back--;
+            }
+        }
+        else break;
+        }else{
+            s+=x[back]; back--;
+            if(front<=back)
+        {
+            if(x[front]>x[back])
+            {
+                d+=x[front]; front++;
+            }
+            else{
+                d+=x[back]; back--;
+            }
+        }
+        else break;
+        }
+        }
+        else break;
+    }
+    cout<<s<<" "<<d;
+    
+}

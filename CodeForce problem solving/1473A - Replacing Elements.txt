@@ -1,0 +1,54 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,n,d,a[100],min,min2;
+    cin>>t;
+    
+    string s[t];
+    bool flag;
+
+    for(int i=0;i<t;i++)
+    {
+        flag=true;
+        
+        cin>>n>>d>>a[0]>>a[1];
+        
+        if(a[0]>d || a[1]>d) flag=false;
+        
+        if(a[0]>=a[1]) {
+            min=a[1];
+            min2=a[0];
+        }
+        else {
+            min=a[0]; min2=a[1];
+        }
+        
+        for(int j=2;j<n;j++)
+        {
+            cin>>a[j];
+            if(a[j]<min){
+                min2=min;
+                min=a[j];
+            }
+            else if(a[j]<min2) min2=a[j];
+            else if(a[j]>d) flag=false;
+        }
+        if(flag || min+min2<=d) s[i]="YES";
+        else s[i]="NO";
+    }
+    for(int i=0;i<t;i++) cout<<s[i]<<endl;
+}
+/*
+3
+5 3
+2 3 2 5 4
+3 4
+2 4 4
+5 4
+2 1 5 3 6
+*/

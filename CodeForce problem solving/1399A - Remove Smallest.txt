@@ -1,0 +1,48 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,n,temp,a[50];
+    cin>>t;
+    string s[t];
+    
+    for(int i=0;i<t;i++)
+    {
+        cin>>n;
+        for(int j=0;j<n;j++)
+        {
+            cin>>a[j];
+        }
+        
+        for(int j=0;j<n-1;j++)
+        {
+            for(int k=j+1;k<n;k++)
+            {
+                if(a[j]>a[k])
+                {
+                    temp=a[j];
+                    a[j]=a[k];
+                    a[k]=temp;
+                }
+            }
+        }
+        s[i]="YES";
+        for(int j=1;j<n;j++)
+        {
+            if(a[j]-a[j-1]>1){
+                s[i]="NO";
+                break;
+            }
+        }
+    }
+    
+    for(int i=0;i<t;i++)
+    {
+        cout<<s[i]<<endl;
+    }
+    
+}

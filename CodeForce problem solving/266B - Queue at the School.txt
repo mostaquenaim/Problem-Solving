@@ -1,0 +1,37 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,t,count=0;
+    cin>>n>>t;
+    
+    string s;
+    cin>>s;
+    
+    if(s.length()==n)
+    {
+        int j=0;
+        char temp;
+        for(int i=0;i<t;i++)
+        {
+            //count=j;
+            //cout<<count<<endl;
+            
+            for(j=0;j<s.length()-1;j++)
+            {
+                if(s[j]=='B' && s[j+1]=='G')
+                {
+                    temp=s[j];
+                    s[j]=s[j+1];
+                    s[j+1]=temp;
+                    j++;
+                }
+            }
+        }
+        cout<<s;
+    }
+}

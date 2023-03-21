@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t,n,arr[51],count,temp,n2;
+    cin>>t;
+    while(t--){
+
+        cin>>n;
+        for(int i=1;i<n;i++) {
+                cout<<i+1<<" ";
+                arr[i]=i+1;
+        }
+        cout<<"1 ";
+        arr[n]=1;
+        n2=n;
+        count=1;
+        for(int j=1;j<n;j++){
+        cout<<endl;
+            temp=arr[count];
+            arr[count]=arr[count+1];
+            arr[count+1]=temp;
+            count++;
+            for(int k=1;k<=n;k++){
+                cout<<arr[k]<<" ";
+            }
+        }
+        cout<<endl;
+    }
+
+}

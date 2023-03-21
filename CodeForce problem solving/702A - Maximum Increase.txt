@@ -1,0 +1,29 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,count=0,m;
+    cin>>n;
+    int a[n],max[n];
+    cin>>a[0];
+    
+    max[count]=1;
+    m=0;
+    for(int i=1;i<n;i++)
+    {
+        cin>>a[i];
+        if(a[i]>a[i-1]) max[count]++;
+        else {
+            if(m < max[count]) m=max[count];
+            max[++count]=1;
+        }
+    }
+    if(m<max[count]) cout<<max[count];
+    else cout<<m;
+    
+    
+}

@@ -1,0 +1,48 @@
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool primeCheck(int n)
+{
+    bool isPrime=true;
+    if (n == 0 || n == 1) {
+        isPrime = false;
+    }
+    
+    else {
+        for (int j = 2; j <= n / 2; ++j) {
+            if (n % j == 0) {
+                //cout<<j;
+                isPrime = false;
+                break;
+            }
+        }
+    }
+    return isPrime;
+}
+int main()
+{
+    int n,y;
+    cin>>n;
+    unsigned long long int x[n],z;
+
+    for(int i=0;i<n;i++)
+    {
+        cin>>x[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        y=int(sqrt(x[i]));
+        z=sqrt(x[i]);
+        if(z*z==x[i])
+        {
+            if(primeCheck(y)) cout<<"YES"<<endl;
+            else cout<<"NO"<<endl;
+        }
+        else {
+            cout<<"NO"<<endl;
+        }
+    }
+        
+}

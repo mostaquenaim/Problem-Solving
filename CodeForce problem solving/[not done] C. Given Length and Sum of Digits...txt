@@ -1,0 +1,37 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int m,s;
+   cin>>m>>s;
+   int arr[m+1];
+   
+   if(m==1 && s==0) cout<<"0 0";
+   else if(m!=1 && s==0) cout<<"-1 -1";
+   else{
+       for(int i=9;i<=1;i--)
+       {
+           if(s%i==0){
+               if(s/i==m){
+                   for(int j=1;j<=m;j++)
+                   {
+                       cout<<i;
+                   }
+                   cout<<" ";
+                   for(int j=1;j<=m;j++)
+                   {
+                       cout<<i;
+                   }
+                   break;
+               }
+               else{
+                   
+               }
+           }
+       }
+   }
+   
+}

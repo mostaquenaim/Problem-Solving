@@ -1,0 +1,31 @@
+
+
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int n,m,a,b,sum=0;
+    cin>>n>>m>>a>>b;
+    
+    if(a<=b/m) {
+       // cout<<"case 1"<<endl;
+        cout<<n*a;
+    }
+    else{
+        if(n%m==0)
+        {
+                   // cout<<"case 2"<<endl;
+
+            cout<<(n/m)*b;
+        }
+        else{
+                   // cout<<"case 3"<<endl;
+                    
+            if((n/m)*b+(n%m)*a<((n/m)+1)*b) 
+            cout<<(n/m)*b+(n%m)*a;
+            else cout<<((n/m)+1)*b;
+        }
+    }
+}

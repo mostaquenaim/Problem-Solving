@@ -1,0 +1,34 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,n,a,e,o;
+    cin>>t;
+    
+    string s[t];
+    
+    for(int i=0;i<t;i++)
+    {
+        cin>>n;
+        
+        e=0;o=0;
+        
+        for(int j=0;j<n;j++)
+        {
+            cin>>a;
+            
+            if(e<1 || o<1)
+            if(a%2==0) e++; 
+            else o++;
+        }
+        
+        if((n%2==0 && o>=1 && e>=1) || (n%2!=0 && o>=1 )) s[i]="YES";
+        else s[i]="NO";
+    }
+    
+    for(int i=0;i<t;i++) cout<<s[i]<<endl;
+}

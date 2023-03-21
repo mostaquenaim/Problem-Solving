@@ -1,0 +1,19 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    
+    if(b>=a) {
+        cout<<a<<" "<<(b-a)/2;
+    }
+    else 
+    {
+        cout<<b<<" "<<(a-b)/2;
+    }
+}

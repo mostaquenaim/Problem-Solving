@@ -1,0 +1,17 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int y,w,max;
+    cin>>y>>w;
+    
+    if(y>w) max=y; 
+    else max=w;
+    
+    if(7-max==1 || 7-max==5) cout<<7-max<<"/6";
+    else if(7-max==2 || 7-max==4) cout<<(7-max)/2<<"/3";
+    else if(7-max==3) cout<<"1/2";
+    else cout<<"1/1";
+}

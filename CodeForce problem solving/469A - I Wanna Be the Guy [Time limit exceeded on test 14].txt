@@ -1,0 +1,59 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,p,q,countP=1,countQ=1;
+    cin>>n>>p;
+    int a[p+1];
+    
+    for(int i=1;i<=p;i++)
+    {
+        cin>>a[i];
+    }
+    
+    cin>>q;
+    int b[q+1];
+    
+    for(int i=1;i<=q;i++)
+    {
+        cin>>b[i];
+    }
+    
+    bool flag=true;
+    
+    for(int i=1;i<=n;i++)
+    {
+        if(flag)
+        {
+        while(a[countP]!=i && b[countQ]!=i)
+        {
+            countP++;
+            countQ++;
+            
+            if(p>q &&  countP>p){
+                flag=false;
+                break;
+            }
+            else if(p<q && countQ>q)
+            {
+                flag=false;
+                break;
+            }
+            
+            if(countQ>q) countQ--;
+            if(countP>p) countP--;
+            
+            
+            
+        }
+        countP=1;
+        countQ=1;
+        }
+        else break;
+    }
+    if(flag) cout<<"I become the guy.";
+    else cout<<"Oh, my keyboard!";
+}

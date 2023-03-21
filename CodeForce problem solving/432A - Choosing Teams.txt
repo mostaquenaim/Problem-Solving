@@ -1,0 +1,33 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,k,count=0,check=0;
+    cin>>n>>k;
+    
+    if(n>=1 && n<=2000 && k>=1 && k<=5)
+    {
+    int y;
+    
+    for(int i=1;i<=n;i++)
+    {
+        cin>>y;
+        if(y+k<=5)
+        {
+            check++;
+            if(check==3)
+            {
+                count++;
+                check=0;
+            }
+        }
+    }
+    
+    cout<<count;
+    
+    }
+}

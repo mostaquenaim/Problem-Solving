@@ -1,0 +1,63 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,sumE=0,sumO=0;
+    cin>>t;
+    bool flag=true;
+    int n[t+1];
+    
+    if(t>=1)
+    {
+        for(int i=1;i<=t;i++)
+        {
+            cin>>n[i];
+            if(n[i]<2)
+            {
+                flag=false;
+            }
+        }
+        
+        if(flag)
+        {
+            for(int i=1;i<=t;i++)
+            {
+                if(n[i]%2!=0 || (n[i]/2) % 2!=0){
+                    cout<<"NO"<<endl;
+                }
+                else {
+                    cout<<"YES"<<endl;
+                    for(int j=2;j<=n[i];j+=2)
+                    {
+                        cout<<j<<" ";
+                        sumE+=j;
+                    }
+                    int check;
+                    for(int j=1;j<=n[i]-2;j=j+2)
+                    {
+                        cout<<j<<" ";
+                        sumO+=j;
+                        check=j+2;
+                    }
+                    
+                    while(true)
+                    {
+                        if(sumO+check==sumE)
+                        {
+                            cout<<check<<endl;
+                            sumE=0;sumO=0; check=0;
+                            break;
+                        }
+                        check+=2;
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+}

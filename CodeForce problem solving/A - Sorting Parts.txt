@@ -1,0 +1,25 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,n,a,a2;
+    cin>>t;
+    bool flag;
+    
+    for(int i=0;i<t;i++)
+    {
+        flag=false;
+        cin>>n>>a;
+        for(int j=1;j<n;j++)
+        {
+            a2=a;
+            cin>>a;
+            if(a<a2) flag=true;
+        }
+        if(flag) cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
+    }
+}

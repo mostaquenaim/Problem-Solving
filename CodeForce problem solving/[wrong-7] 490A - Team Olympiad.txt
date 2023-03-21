@@ -1,0 +1,43 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,one=0,two=0,three=0;
+    cin>>n;
+    
+    int t[n+1],o[n+1],tw[n+1],th[n+1];
+    
+    if(n>=1 && n<=5000)
+    { 
+        bool flag=true; int min=0;
+        for(int i=1;i<=n;i++)
+        {
+            cin>>t[i];
+            
+            if(t[i]<1 || t[i]>3) {flag=false; break;}
+            else if(t[i]==1) o[++one]=i;
+            else if(t[i]==2) tw[++two]=i;
+            else th[++three]=i;
+            
+        }
+        if(flag)
+        {
+          if(one<two && one <three) min=one; 
+            else if(two<one && two<three) min=two; 
+            else min=three;  
+            
+            cout<<min<<endl;
+            one=(one-min)+1;
+            two=(two-min)+1;
+            three=(three-min)+1;
+            for(int i=1;i<=min;i++)
+            {
+                cout<<o[one++]<<" "<<tw[two++]<<" "<<th[three++]<<endl;
+            }
+        }
+    }
+}

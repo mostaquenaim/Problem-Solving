@@ -1,0 +1,31 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,k,sum=0,count=0;
+    cin>>n>>k;
+    
+    bool flag=true;
+    
+    if(1<=n && n<=10 && 1<=k && k<=240)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            //cout<<count<<" "<<sum<<endl;
+            sum+=5*i;
+            count++;
+            if(240<sum+k)
+            {
+                flag=false;
+                cout<<count-1;
+                break;
+            }
+        }
+        if(flag) cout<<count;
+        
+    }
+}

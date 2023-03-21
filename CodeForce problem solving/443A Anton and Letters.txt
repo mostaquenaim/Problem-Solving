@@ -1,0 +1,53 @@
+
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    string s;
+    getline(cin,s);
+    
+    int count=0,arr[s.length()],check=0;
+    bool flag=true;
+    
+    if(s[0]=='{' && s[s.length()-1]=='}')
+    {
+        //cout<<"if ok"<<endl;
+    for(int i=1;i<s.length()-1;i+=3)
+    {
+        if(s[i]>=97 && s[i]<=122)
+        {
+                //cout<<i<<"for ok"<<endl;
+
+            for(int k=0;k<check;k++)
+            {
+                        //cout<<k<<"k for ok"<<endl;
+
+                if(s[i]==arr[k])
+                {
+                    flag=false;
+                    break;
+
+                }
+            }
+            if(flag){
+                       // cout<<"bool ok"<<endl;
+
+                count++;
+            for(int j=i+1;j<s.length();j++){
+                if(s[i]==s[j]){
+                    arr[check++]=s[j];
+                }
+            }
+            }
+            else flag=true;
+        }
+    }
+        cout<<count;
+    }
+    
+    
+    
+}

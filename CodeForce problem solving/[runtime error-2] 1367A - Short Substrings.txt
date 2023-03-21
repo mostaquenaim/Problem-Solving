@@ -1,0 +1,50 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,count=0;
+    cin>>t;
+    
+    string b[t+1],a[t+1];
+        int x[t+1];
+        if(t>=1)
+        {
+
+    for(int i=1;i<=t;i++)
+    {      //  cout<<"ok"<<endl;
+
+    cin>>b[i];
+    if(b[i].length()>=2)
+    {
+    a[i][0]=b[i][0];
+    //a[b.length()-1]
+    for(int j=1;j<b[i].length()-1;j=j+2)
+    {
+        //cout<<"ok"<<endl;
+        a[i][++count]=b[i][j];
+    }
+          //  cout<<"ok"<<endl;
+
+    a[i][++count]=b[i][b[i].length()-1];
+    x[i]=count;
+    //cout<<b[i]<<endl;
+    count=0;
+    }
+    }
+    
+    for(int i=1;i<=t;i++)
+    {
+        for(int j=0;j<=x[i];j++)
+        {
+            //cout<<"yes";
+            cout<<a[i][j];
+        }
+        cout<<endl;
+    }
+    }
+    
+}

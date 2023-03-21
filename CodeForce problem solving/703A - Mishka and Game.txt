@@ -1,0 +1,38 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,m,c,countM=0,countC=0;
+    cin>>n;
+    
+    if(n>=1 && n<=100)
+    {
+        bool flag=true;
+        
+        for(int i=0;i<n;i++)
+        {
+            cin>>m>>c;
+            
+            if(m<1 || m>6 || c<1 || c>6)
+            { flag=false;
+            break;
+            }
+            
+            else if(m>c)
+            {countM++;
+            }
+            else if(c>m) countC++;
+            
+        }
+        if(flag)
+        
+        if(countC>countM) cout<<"Chris";
+        else if(countM>countC) cout<<"Mishka";
+        else cout<<"Friendship is magic!^^";
+        
+    }
+    
+}

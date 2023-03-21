@@ -1,0 +1,67 @@
+    
+    
+    #include <iostream>
+    
+    using namespace std;
+    
+    int main()
+    {
+        int t,n,m,r,c;
+        cin>>t;
+        int count[t+1];
+        char arr[1000][1000];
+        bool flag,flag2=false;
+        
+        if(t>=1 && t<=100)
+        {
+        for(int i=1;i<=t;i++)
+        {
+            cin>>n>>m>>r>>c;
+            if(n<=50 && m<=50 && r<=n && c<=m && r>=1 && c>=1)
+            {
+                for(int j=1;j<=n;j++)
+                {
+                    for(int k=1;k<=m;k++)
+                    {
+                        cin>>arr[j][k];
+                        if(arr[j][k]=='W' ) continue;
+                        else if(arr[j][k]=='B') flag2=true;
+                        else {flag=false; break;}
+                    }
+                }
+            }
+            
+            if(flag)
+            {
+                if(arr[r][c]=='B')
+                {
+                    count[t]=0;
+                }
+                else {
+                    for(int i=1;i<=m;i++)
+                    {
+                        if(arr[r][m]=='B'){
+                            flag=false;
+                            count[t]=1;
+                        }
+                    }
+                    for(int i=1;i<=n;i++)
+                    {
+                        if(arr[i][c]=='B')
+                        {
+                            flag=false;
+                            count[t]=1;
+                        }
+                    }
+                    
+                    if(flag)
+                    { if(flag2) count[t]=2;
+                    else count[t]=-1;}
+                }
+            }
+        }
+        for(int i=1;i<=t;i++)
+                cout<<count[t]<<endl;
+                        
+    }
+    }

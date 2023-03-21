@@ -1,0 +1,43 @@
+
+
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int a[1000000]={0};
+    
+    
+    int x;
+    cin>>x;
+    unsigned long long int b,sq,j;
+    string s[x];
+    bool flag;
+    
+    for(int i=0;i<x;i++)
+    {
+        flag=true;
+        cin>>b;
+        sq=sqrt(b);
+        if(b<=3) s[i]="NO";
+        else if(sq*sq==b)
+        {
+            for(j=2;j<=b/2;j++)
+            {
+                if(b%j==0 && j!=sq)
+                {
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag) s[i]="YES";
+            else s[i]="NO";
+        }
+        else s[i]="NO";
+    }
+    for(int i=0;i<x;i++)
+    {
+        cout<<s[i]<<endl;
+    }
+}

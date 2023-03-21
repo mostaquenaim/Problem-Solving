@@ -1,0 +1,66 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,check=1,sum=0;
+    cin>>n;
+    
+    int a[n+1],count[n+1];
+    
+    bool flag=false;
+    
+    if(n>=1)
+    {
+    
+    flag=true;
+
+    for(int i=1;i<=n;i++)
+    {
+      cin>>a[i];  
+      if(a[i]<1) flag=false;
+    }
+    }
+    
+    if(flag)
+    {
+        if(n==1){
+            cout<<"0";
+        }
+        else
+        {
+    for(int i=1;i<n;i++)
+    {
+        if(a[i]<=a[i+1])
+        {
+            count[sum]=++check;
+            //flag=false;
+        }
+        else{
+            if(check>1)
+            {
+            ++sum;
+            check=1;
+            }
+        }
+    }
+   // cout<<sum<<" sum "<<endl;
+    if(sum>0 || check>1)
+    {
+    //cout<<"max "<<count[0]<<endl;
+    int max=count[0];
+    
+    for(int i=0;i<sum;i++)
+    {
+        if(count[i]>max) max=count[i];
+    }
+    
+    cout<<max;
+    }
+    else cout<<"0";
+        }
+    }
+}

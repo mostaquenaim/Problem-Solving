@@ -1,0 +1,68 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long int t,n,a[51],b[51];
+    cin>>t;
+    
+    long int s[t+1];
+    bool flag=true;
+    
+    if(t>=1 && t<=1000)
+    { long int minA,minB;
+    
+        for(int i=0;i<t;i++)
+        {
+            s[i]=0;
+            
+            cin>>n;
+            
+            if(n<1 || n>50){
+                flag=false;break;
+            }
+            else{
+                cin>>a[0];
+                minA=a[0];
+                for(int j=1;j<n;j++)
+                {
+                    cin>>a[j];
+                    if(a[j]<1){
+                        flag=false ; break;
+                    }
+                    else if(a[j]<minA) minA=a[j];
+                }
+                cin>>b[0];
+                minB=b[0];
+                for(int j=1;j<n;j++)
+                {
+                    cin>>b[j];
+                    if(b[j]<1){
+                        flag=false ; break;
+                    }
+                    else if(b[j]<minB) minB=b[j];
+                }
+                long int x=0,y=0;
+                for(int j=0;j<n;j++)
+                {
+                     x=a[j]-minA;
+                    y=b[j]-minB;
+                    if(x>y) s[i]+=x;
+                    else s[i]+=y;
+                }
+                
+            }
+            
+        }
+    } else flag=false;
+    
+    if(flag)
+    {
+        for(int i=0;i<t;i++)
+        {
+            cout<<s[i]<<endl;
+        }
+    }
+}

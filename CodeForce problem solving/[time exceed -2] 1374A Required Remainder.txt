@@ -1,0 +1,43 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,x,y,n;
+    cin>>t;
+    
+    int k[t+1];
+    
+    if(t>=1)
+    {
+        bool flag=true;
+        for(int i=1;i<=t;i++)
+        {
+            cin>>x>>y>>n;
+            if(x<2 || y<0 || x<=y || y>n)
+            {
+                flag=false;
+                break;
+            }
+            else{
+                while(true)
+                {
+                    if(n%x==y)
+                    {
+                        break;
+                    }
+                    n--;
+                }
+                k[i]=n;
+            }
+        }
+        if(flag) 
+        {
+            for(int i=1;i<=t;i++)
+            cout<<k[i]<<endl;
+        }
+    }
+}

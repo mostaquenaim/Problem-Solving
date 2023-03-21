@@ -1,0 +1,39 @@
+
+
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int n,m,temp;
+    cin>>n>>m;
+    int f[m];
+    
+    for(int i=0;i<m;i++)
+    {
+        cin>>f[i];
+    }
+    
+    for(int i=0;i<m-1;i++)
+    {
+        for(int j=i+1;j<m;j++)
+        {
+            if(f[i]>f[j]){
+                temp=f[i];
+                f[i]=f[j];
+                f[j]=temp;
+            }
+        }
+    }
+    
+    int min=f[n-1]-f[0];
+    
+    for(int i=n;i<m;i++)
+    {
+        if(f[i]-f[1+i-n]<min) min=f[i]-f[1+i-n];
+    }
+    
+    cout<<min;
+    
+}

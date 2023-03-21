@@ -1,0 +1,66 @@
+
+
+#include <iostream>
+#include<cmath>
+
+using namespace std;
+
+int main()
+{
+    int t,temp,solve[6],count=0,power;
+    cin>>t;
+    int n[t];
+    
+    string s;
+    
+    for(int i=0;i<t;i++)
+    {
+        cin>>n[i];
+    }
+    
+    for(int i=0;i<t;i++)
+    {
+        s=to_string(n[i]);
+        power=pow(10,(s.length()-1));
+        if(n[i]%power==0) {
+            cout<<"1"<<endl<<s<<endl;
+        }
+        else{
+            temp=n[i]%power;
+            solve[count++]=n[i]-temp;
+            //cout<<"Solve "<<count<<" "<<solve[count-1]<<endl;
+            n[i]=temp;
+            
+            for(int j=0;j<=s.length();j++)
+            {
+            s=to_string(n[i]);
+            
+            power=(pow(10,(s.length()-1)));
+            
+            if(n[i]%power==0){
+                solve[count++]=temp;
+                           // cout<<"Solve "<<count<<" "<<solve[count-1]<<endl;
+
+                break;
+            }
+            
+            else{
+                temp=n[i]%power;
+                solve[count++]=n[i]-temp;
+                            //cout<<"Solve "<<count<<" "<<solve[count-1]<<endl;
+
+                n[i]=temp;
+                //cout<<"Temp "<<temp<<endl;
+            }
+            }
+                            cout<<count<<endl;
+
+            for(int j=0;j<count;j++)
+            {
+                cout<<solve[j]<<" ";
+            }
+            count=0;cout<<endl;
+        }
+    }
+    
+}

@@ -1,0 +1,53 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,x,a;
+    cin>>n;
+    x=n/2;
+    
+    bool flag=true;
+    if(n>=12)
+    {
+            
+            for(int j=2;j<=x;j++)
+            {
+                if(flag)
+                {
+                for(int k=2;k<=x;k++)
+                {
+                    
+                    if(flag)
+                    {
+                        a=j*k;
+                    //cout<<"a "<<a<<" j "<<j<<" k "<<k<<endl;
+                    for(int l=j;l<=x;l++)
+                    {
+                        if(flag)
+                        {
+                            for(int m=k;m<=x;m++)
+                            {
+                               // cout<<" l "<<l<<" m "<<m<<" n-a "<<n-a<<endl;
+                                if(l*m==n-a) {
+                                    flag=false;
+                                    break;
+                                }
+                            }
+                        }
+                        else break;
+                        
+                    }
+                }
+                else break;
+                    
+                    
+                }
+                }
+            }
+            cout<<a<<" "<<n-a;
+    }
+}

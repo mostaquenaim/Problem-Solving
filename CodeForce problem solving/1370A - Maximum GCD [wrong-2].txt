@@ -1,0 +1,62 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,n;
+    cin>>t;
+    
+    int s[t+1];
+    
+    if(t>=1 && t<=100)
+    {
+        bool flag;
+        
+        for(int i=1;i<=t;i++)
+        {
+            cin>>n;
+            flag=true;
+            if(n<2) break;
+            if(flag)
+            {
+            if(n<4) {s[i]=1; flag=false;}
+            else
+            {
+            for(int j=n;j>2;j--)
+            {
+                if(flag)
+                {
+                for(int k=j/2;k>1;k--)
+                {
+                    if(flag)
+                    {
+                    if(j%k==0)
+                    {
+                        for(int l=j/2;l>1;l--)
+                        {
+                            if(l%k==0)
+                            {
+                                s[i]=k; flag=false;
+                                break;
+                            }
+                        }
+                    }
+                } else break;
+                }
+            } else break;
+            }
+        }
+        }
+        }
+        if(flag==false)
+        {
+        for(int i=1;i<=t;i++)
+        {
+            cout<<s[i]<<endl;
+        }
+        }
+    }
+}

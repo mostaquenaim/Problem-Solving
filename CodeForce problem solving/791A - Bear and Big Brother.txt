@@ -1,0 +1,22 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int bobW,limakW,count=0;
+    cin>>limakW>> bobW;
+    if(bobW<=10) 
+    {
+        while(limakW<=bobW )
+        {
+            count++;
+        
+        bobW=bobW*2;
+        limakW=limakW*3;
+        }
+        cout<<count;
+    }
+}

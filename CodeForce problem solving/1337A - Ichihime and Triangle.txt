@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+ 
+int main()
+{
+    int t;
+    cin>>t;
+    
+    int a[t],b[t],c[t],d[t];
+    //string s1,s2,s[t];
+    
+    for(int i=0;i<t;i++)
+    {
+        cin>>a[i]>>b[i]>>c[i]>>d[i];
+    }
+    
+    for(int i=0;i<t;i++)
+    {
+        cout<<b[i]<<" "<<c[i]<<" "<<c[i]<<endl;
+    }
+    
+}

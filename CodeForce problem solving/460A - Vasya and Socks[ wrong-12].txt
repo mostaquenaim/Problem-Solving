@@ -1,0 +1,25 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+ 
+int main()
+{
+    int n,m,x,sum=0;
+    cin>>n>>m;
+    
+    //sum=n;
+ 
+    while(true)
+    {
+        sum+=n;
+ 
+        if(m>n)
+    {
+        if(sum%m==0) cout<<++sum;
+        else cout<<sum;
+        break;
+    }
+        n/=m;
+ 
+    }
+}

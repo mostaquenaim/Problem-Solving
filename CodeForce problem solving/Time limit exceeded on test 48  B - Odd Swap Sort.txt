@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t,n,a[100001],temp,count,check,i;
+    cin>>t;
+    bool flag;
+
+    while(t--){
+
+        flag=true;
+        cin>>n;
+        i=0;
+
+        while(i<n){
+
+            cin>>a[i++];
+
+            if(flag){
+            check=i-1;
+
+            while(check>0){
+                    
+                        if(a[check]<a[check-1]){
+                            if((a[check]+a[check-1])%2==0){
+                                flag=false;
+                                break;
+                            }
+                            else{
+                                temp=a[check];
+                                a[check]=a[check-1];
+                                a[--check]=temp;
+                            }
+                        }
+            
+                        else break;
+                    }
+            }
+        }
+        if(flag) cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
+    }
+
+}

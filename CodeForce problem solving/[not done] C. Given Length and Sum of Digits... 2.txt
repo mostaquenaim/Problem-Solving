@@ -1,0 +1,48 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int m,m2,s,count=1;
+   cin>>m>>s;
+   m2=m;
+   int arrx[m+1],arrn[m+1];
+   
+   if(m==1 && s==0) cout<<"0 0";
+   else if(m!=1 && s==0) cout<<"-1 -1";
+   else{
+       for(int i=9;i<=1;i--)
+       {
+           if(s%i==0){
+               if(s/i==m2){
+                   for(int j=count;j<=m;j++)
+                   {
+                       arrx[j]=i;
+                   }
+                   for(int j=m2;j>=1;j--)
+                   {
+                       arrn[j]=i;
+                   }
+                   break;
+               }
+               else{
+                   for(int j=count;j<=s/i;j++)
+                   {
+                       arrx[j]=i;
+                   }
+                   for(int j=m2;j>=m2+2-(s/i);j--)
+                   {
+                       arr[j]=i;
+                   }
+                   
+                    m2-=m2+2-(s/i);
+                    count+=s/i;
+
+               }
+           }
+       }
+   }
+   
+}

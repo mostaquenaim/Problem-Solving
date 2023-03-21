@@ -1,0 +1,40 @@
+
+
+#include <iostream>
+#include<cmath>
+
+using namespace std;
+
+int main()
+{
+    int t,n,x,sum,k;
+    cin>>t;
+    int solve[t];
+    
+    for(int i=0;i<t;i++)
+    {
+        cin>>n;
+        sum=0;
+        x=1;
+        k=0;
+        while(true)
+        {
+            sum+=pow(2,k++)*x;
+            if(sum==n) {
+                solve[i]=x;
+                break;
+            }
+            else if(sum>n){
+                x++;
+                k=0;
+                sum=0;
+            }
+        }
+    }
+    
+    for(int i=0;i<t;i++)
+    {
+        cout<<solve[i]<<endl;
+    }
+    
+}

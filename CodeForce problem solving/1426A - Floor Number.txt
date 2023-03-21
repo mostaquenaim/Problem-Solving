@@ -1,0 +1,34 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,n,x,count;
+    cin>>t;
+    
+    int s[t];
+    
+    for(int i=0;i<t;i++)
+    {
+        cin>>n>>x;
+        count=0;
+        if(n<=2) s[i]=1;
+        else  {
+            while(true)
+            {
+                if (n>=count*x + 3 && n<=(count+1)*x+2)
+                {
+                        s[i]=count+2;                
+                    break;
+                }
+                count++;
+            }
+            
+        }
+    }
+    
+    for(int i=0;i<t;i++) cout<<s[i]<<endl;
+}

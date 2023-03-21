@@ -1,0 +1,38 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,a,max,min,maxP,minP;
+    cin>>n>>a;
+    max=a;
+    min=a;
+    maxP=1;
+    minP=1;
+    
+    for(int i=2;i<=n;i++)
+    {
+        cin>>a;
+        if(max<a){
+            max=a;
+            maxP=i;
+        }
+        else if(min>=a)
+        {
+            min=a;
+            minP=i;
+        }
+    }
+    
+    if(maxP>minP)
+    {
+        cout<<(maxP-1)+(n-minP)-1;
+    }
+    else{
+        cout<<(maxP-1)+(n-minP);
+    }
+    
+}

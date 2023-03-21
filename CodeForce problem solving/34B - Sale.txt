@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,m,i=0,total=0;
+    cin>>n>>m;
+    int arr[n];
+ 
+    while(true){
+        cin>>arr[i++];
+        if(i==n) break;
+    }
+ 
+    i=0;
+    sort(arr,arr+n);
+ 
+    while(m--){
+            if(arr[i]>=0) break;
+        total+=arr[i++];
+    }
+    cout<<0-total;
+}

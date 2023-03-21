@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,a[100],n,sum;
+    cin>>t;
+    
+    for(int i=0;i<t;i++)
+    {
+        sum=0;
+        cin>>n;
+        
+        for(int j=0;j<n;j++)
+        
+        {
+            cin>>a[j];
+            sum+=a[j];
+        }
+        
+        if(sum%n==0) cout<<"0"<<endl;
+        else cout<<"1"<<endl;
+    }
+}

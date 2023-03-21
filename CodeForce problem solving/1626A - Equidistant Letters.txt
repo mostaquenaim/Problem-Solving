@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    string s,s2;
+    char temp;
+
+    while(t--)
+    {
+        cin>>s;
+
+        for(int i=0;i<s.length()-1;i++){
+            for(int j=i+1;j<s.length();j++){
+                if(s[i]==s[j] && j!=i+1){
+                    temp=s[i+1];
+                    s[i+1]=s[j];
+                    s[j]=temp;
+
+                }
+            }
+        }
+
+        cout<<s<<endl;
+    }
+}

@@ -1,0 +1,71 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,a,b;
+    cin>>t;
+    
+    int s[t];
+    bool flag=true;
+    for(int i=0;i<t;i++)
+    {
+        cin>>a>>b;
+        
+        if(a>=1 && a<=100 && b>=1 && b<=100)
+        {
+        if(a>b){
+            if(a%b==0){
+                s[i]=a*a;
+            }else{
+                while (true)
+                { a++;
+                   if(a%b==0)
+                   {
+                       s[i]=a*a;
+                       break;
+                   }
+                }
+            }
+            }
+        else if(a==b){
+            while(true)
+            {
+                b++;
+                if(b%a==0)
+                {
+                    s[i]=b*b;
+                    break;
+                }
+            }
+        }
+        else {
+            if(b%a==0){
+                s[i]=b*b;
+            }else{
+                while (true)
+                { b++;
+                   if(b%a==0)
+                   {
+                       s[i]=b*b;
+                       break;
+                   }
+                }
+            }
+        }
+    }
+    else {
+        flag=false; break;
+    }
+    }
+    if(flag)
+    {
+        for(int i=0;i<t;i++)
+        {
+            cout<<s[i]<<endl;
+        }
+    }
+    
+}

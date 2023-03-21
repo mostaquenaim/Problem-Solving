@@ -1,0 +1,54 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,max;
+    cin>>t;
+    int a[t],b[t],c[t];
+    
+    for(int i=0;i<t;i++)
+    {
+        cin>>a[i]>>b[i]>>c[i];
+    }
+    for(int i=0;i<t;i++)
+    {
+        if(a[i]==0 && b[i]==0 && c[i]==0) cout<<"1 1 1"<<endl;
+        
+        else if(a[i]>=b[i] && a[i]>=c[i]) 
+        if (a[i]==b[i] || a[i]==c[i])
+        cout<<"1 "<<a[i]+1-b[i]<<" "<<a[i]+1-c[i]<<endl;
+        else 
+        cout<<"0 "<<a[i]+1-b[i]<<" "<<a[i]+1-c[i]<<endl;
+        
+        else if(b[i]>=c[i] && b[i]>=a[i]) 
+        if(a[i]==b[i] || b[i]==c[i])
+            cout<<b[i]+1-a[i]<< " 1 "<<b[i]+1-c[i]<<endl;
+        else
+            cout<<b[i]+1-a[i]<< " 0 "<<b[i]+1-c[i]<<endl;
+        
+        else
+        if(c[i]==a[i] || c[i]==b[i])
+        cout<<c[i]+1-a[i]<< " " <<c[i]+1-b[i]<<" 1 "<<endl;
+        else
+        cout<<c[i]+1-a[i]<< " " <<c[i]+1-b[i]<<" 0 "<<endl;
+        
+    }
+}
+/* 
+5
+0 0 0
+10 75 15
+13 13 17
+1000 0 0
+0 1000000000 0
+*/

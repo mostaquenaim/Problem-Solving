@@ -1,0 +1,14 @@
+
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int M,N,x;
+    cin>>M>>N;
+    x=M*N;
+    
+    if(1<=M<=16 && 1<=N<=16) cout<<x/2;
+}
