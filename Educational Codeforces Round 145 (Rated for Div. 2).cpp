@@ -46,23 +46,19 @@ int binarySearch(int array[], int x, int low, int high) {
 }
 
 
+int main() {
+    int t;
+    cin >> t;
 
-void solve(){
-    int n;
-    cin>>n;
-    ll arr[n+1];
+    while (t--) {
+        long long n;
+        cin >> n;
 
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+        long long result=sqrtl(n-1);
+
+
+        cout<<result<<endl;
     }
 
-}
-
-int main(){
-	int t;
-	cin>>t;
-  //  t=1;
-	while(t--){
-		solve();
-}
+    return 0;
 }

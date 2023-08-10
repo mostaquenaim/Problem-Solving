@@ -45,16 +45,58 @@ int binarySearch(int array[], int x, int low, int high) {
   return -1;
 }
 
+bool finding(int arr[],int target){
 
+
+    int n = sizeof(arr) / sizeof(*arr);
+
+    bool exists = std::find(arr, arr + n, target) != arr + n;
+    if (exists) {
+        return true;
+    } else {
+        return false;
+    }
+
+
+
+    }
 
 void solve(){
     int n;
     cin>>n;
-    ll arr[n+1];
+
+    int a[n+1],b[n+1];
 
     for(int i=0;i<n;i++){
-        cin>>arr[i];
+        cin>>a[i];
     }
+
+     for(int i=0;i<n;i++){
+        cin>>b[i];
+    }
+
+    bool flag=true;
+
+    for(int i=0;i<n;i++){
+        if((a[i] <= a[n-1] && b[i] <= b[n-1]) || (b[i]<=a[n-1] && a[i]<=b[n-1])){
+            continue;
+        }
+        else{
+            flag=false;
+            break;
+        }
+    }
+    if(flag){
+        py;
+    }
+    else{
+        pn;
+    }
+
+
+
+
+
 
 }
 
